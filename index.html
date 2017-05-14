@@ -1,115 +1,281 @@
 <!DOCTYPE html>
 <!-- saved from url=(0014)about:internet -->
+<!-- While developing we must disable activeX in IE to prevent it creating a warning (http://msdn.microsoft.com/en-us/library/ms537628(v=vs.85).aspx)-->
+
+<!--
+ - index.html
+ - Entery to learners road code site
+ -
+ - Copyright 2013 Thomas Morrison, all right reserved.
+ -->
 <html>
-<head>
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-<title>Learners Road Code &#124; Home</title>
-<meta name=description content="An interactive game style road code quiz for young people learning to drive New Zealand roads."/>
-<meta name=keywords content="road code, nz, New Zealnd, road rules, game, cars, education, driving rules, rules, driving, test, driving quiz, driving test"/>
-<meta name=author content="Thomas Morrison"/>
-<meta name=revised content="18/10/13"/>
-<link rel=stylesheet type=text/css href="css/universal.css"/>
-<link rel=stylesheet type=text/css href=css/screen.css media="screen"/>
-<link rel=stylesheet type=text/css href=css/print-results.css media="print"/>
-<link rel=stylesheet type=text/css href="css/rotate.css"/>
-<style type=text/css>.grey{color:grey}._subheadBack{background-color:#f2f2f2;padding:1.6px;padding-left:16px;padding-right:8px}._botlabel1{line-height:74px;padding-right:16px;background-color:#79db75}._botlabel2{line-height:37px;padding-right:16px;background-color:#f2f2f2;margin:0}._q{height:100%;border-right:solid 3px #79db75;padding-right:16px;display:table-cell;vertical-align:middle;width:100%;margin:0 auto}.rd{position:relative;left:124px;top:58px;background-image:url(images/road-02.png);background-repeat:no-repeat;height:125px;width:438px}#blue_car,#green_car{background-image:url(images/cars.png);overflow:visible}#blue_car:hover{top:95px}#green_car:hover{bottom:105px}#prog{position:fixed;width:5%;height:7px;border-top:3px solid #79db75;border-right:2px solid #79db75}#progval{position:absolute;font-size:10px;margin:0;color:grey;text-align:center;height:5px;width:10px;right:-6px;top:10px}#left_side{text-align:right;width:510px;position:absolute;left:32px}#table{height:309px;overflow:auto}</style>
-<style id=insert_answers></style>
-<!--[if IE]>
-<script src=https://html5shiv.googlecode.com/svn/trunk/html5.js></script>
-<![endif]-->
-<script type=text/javascript src=js/indexController.js charset=utf-8></script>
-</head>
-<body>
-<header>
-<div id=prog><div id=progval>1</div></div>
-<h6>Learners Road Code &#124; NZ</h6>
-<nav>
-<ul>
-<li>
-<a href=index.html class=nav_ico style="background-position:40% 0;background-image:url(images/ics.png)"></a>
-<a href=index.html class=nav_label>Home</a>
-</li>
-<li>
-<a href=resources.html class=nav_ico style="background-position:0 0;background-image:url(images/ics.png)"></a>
-<a href=resources.html class=nav_label>Resources</a>
-</li>
-<li>
-<a href=legal-stuff.html class=nav_ico style="background-position:20% 0;background-image:url(images/ics.png)"></a>
-<a href=legal-stuff.html class=nav_label>Legal&nbsp;Stuff</a>
-</li>
-</ul>
-</nav>
-</header>
-<section id=outline>
-<article id=left_side>
-<header id=h style=padding:16px;background-color:#f2f2f2;height:116px>
-<h1 class=mainheading>Learners Road Code</h1>
-<hr>
-<p class=grey style=font-size:14px;padding-top:8px>
-An interactive game style road code quiz for young<br/>people learning to drive on New Zealand roads.
-</p>
-</header>
-<section style=margin-top:32px;margin-bottom:32px;height:148px>
-<div id=midleftlabels>
-<h3 class=subheading style=margin-top:0><span class=_subheadBack>Overtaking and Give Way</span></h3>
-<h3 class=subheading><span class=_subheadBack>Road Markings</span></h3>
-<h3 class=subheading style=margin-bottom:0><span class=_subheadBack>Signs and Parking</span></h3>
-</div>
-<div id=outerq style=width:100%;height:148px;vertical-align:middle><p id=q style></p></div>
-</section>
-<div style=height:148px>
-<div style=height:50%></div>
-<h1 id=botleftlabel class='mainheading _botlabel1'>Choose a car to start</h1>
-</div>
-</article>
-<aside id=road_side style=text-align:left;position:absolute;right:32px;width:240px;height:510px>
-<div id=road_01 style=position:absolute;left:0px;margin-top:-57px;background-image:url(images/road-01.png);background-repeat:no-repeat;height:625px;width:125px>
-<a id=blue_car class=ie_blink href=# onclick="onStartTest('blue')"></a>
-<a id=green_car href=# onclick="onStartTest('green')"></a>
-<div id=explode style=width:300px;height:300px;position:absolute></div>
-</div>
-<div style=height:148px><div id=road_02></div></div>
-<section style=height:148px;margin-top:32px;margin-bottom:32px>
-<div style=float:right;height:100%>
-<div style=height:20px></div>
-<ul style=list-style:none>
-<li>
-<a id=pic_one href=# class=nav_ico onclick=onOptionClick(1) style=background-image:url(images/ics.png)></a>
-<div id=a_one style=margin-top:-4px><span></span></div>
-</li>
-<li>
-<a id=pic_two href=# class=nav_ico onclick=onOptionClick(2) style=background-image:url(images/ics.png)></a>
-<div id=a_two style=margin-top:-44px><span></span></div>
-</li>
-<li>
-<a id=pic_three href=# onclick=onOptionClick(3) class=nav_ico style=background-image:url(images/ics.png)></a>
-<div id=a_three style=margin-top:-84px><span></span></div>
-<section style=z-index:-1><span id=prompt></span></section>
-</li>
-</ul>
-</div>
-</section>
-<section style=height:148px>
-<div style=float:right;height:100%>
-<div style=height:20px></div>
-<ul style=list-style:none>
-<li style=margin-top:48px>
-<a id=qmark href=# class=nav_ico onclick=onOptionClick(0) style=background-image:url(images/ics.png)></a>
-<div id=final style=margin-top:-44px><p id=final-text></p></div>
-<section style=margin-top:-44px;z-index:-1><span id=notSure></span></section>
-</li>
-</ul>
-</div>
-</section>
-</aside>
-</section>
-<footer>
-<h6>
-&copy; 2013 Some Person, all rights reserved &#124;
-<a href=legal-stuff.html>Legal Stuff</a> &#124;
-<a href=http://www.google.com/chrome/>Best in Chrome</a>&nbsp;&nbsp;
-</h6>
-</footer>
-</body>
+	<head>
+		<!-- Doc settings-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <!-- render in latest verson of IE or in chrome frame-->
+		
+		<!-- SEO -->
+		<title>Learners Road Code &#124; Home</title>
+		<meta name="description" content="An interactive game style road code quiz for young people learning to drive New Zealand roads."/>
+		<meta name="keywords" content="road code, nz, New Zealnd, road rules, game, cars, education, driving rules, rules, driving, test, driving quiz, driving test"/>
+		
+		<!-- Other -->
+		<meta name="author" content="Thomas Morrison"/>
+		<meta name="revised" content="18/10/13"/>
+        
+		<!-- External links -->
+		<link rel="stylesheet" type="text/css" href="css/universal.css"/>
+		<link rel="stylesheet" type="text/css" href="css/screen.css" media="screen"/>
+		<link rel="stylesheet" type="text/css" href="css/print-results.css" media="print"/>
+		<link rel="stylesheet" type="text/css" href="css/rotate.css"/>
+		
+		<!-- Styles for this page only -->
+		<style type="text/css">
+			
+			/* make text grey */
+			.grey {color:grey;}
+			
+			/* Turn on and off these classes in move.js */
+			._subheadBack {
+				background-color:#f2f2f2;
+				padding:1.6px;
+				padding-left:16px;
+				padding-right:8px;
+			}
+			._botlabel1 {
+				line-height:74px;
+				padding-right:16px;
+				background-color:#79db75;
+			}
+			._botlabel2 {
+				line-height:37px;
+				padding-right:16px;
+				background-color:#f2f2f2;
+				margin:0;
+			}
+			._q {
+				height:100%;
+				border-right: solid 3px #79db75;
+				padding-right:16px;
+				display:table-cell;
+				vertical-align: middle;
+				width: 100%;
+				margin: 0 auto;
+			}
+			.rd {
+				position:relative;
+				left:124px;
+				top:58px;
+				background-image:url(images/road-02.png);
+				background-repeat:no-repeat;
+				height:125px;
+				width:438px;
+			}
+			
+			/* cars */
+			#blue_car, #green_car {
+				background-image: url(images/cars.png);
+				overflow:visible;
+			}
+			#blue_car:hover {
+				top:95px;
+			}
+			#green_car:hover {
+				bottom:105px;
+			}
+			
+			/* other */
+			#prog {
+				position:fixed;
+				width:5%;
+				height:7px;
+				border-top: 3px solid #79db75;
+				border-right: 2px solid #79db75;
+			}
+			#progval {
+				position:absolute;
+				font-size:10px;
+				margin:0;
+				color:grey;
+				text-align:center;
+				height:5px;
+				width:10px;
+				right:-6px;
+				top:10px;
+			}
+			#left_side {
+				text-align:right;width:510px;position:absolute;left:32px;
+			}
+			#table {
+				height:309px;
+				overflow:auto;
+			}
+		</style>
+        <style id='insert_answers'></style>
+        
+        <!-- Try imporve compatability for IE -->
+		<!--[if IE]>
+		<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		<!-- Scripts --> <!-- application/javascirpt not supported in IE -->
+		<script type="text/javascript" src="js/indexController.js" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<!-- - - - - - - - - - - - - - - - - -
+			- FIXED SCREEN ELEMENTS -
+		- - - - - - - - - - - - - - - - - - -->
+		
+		<!-- Top fixed components -->
+		<header>
+			
+			<div id='prog'><div id='progval'>1</div></div>
+			
+			<!-- Top left label -->
+			<h6>Learners Road Code &#124; NZ</h6>
+			
+			<!-- BEGIN navigation bar -->
+			<nav>
+				<ul>
+					<!-- Home button -->
+					<li>
+						<a href="index.html" class="nav_ico" style="background-position:40% 0%;background-image:url(images/ics.png);"></a>
+						<a href="index.html" class="nav_label">Home</a>
+					</li>
+					
+					<!-- Resources button -->
+					<li>
+						<a href="resources.html" class="nav_ico" style="background-position:0% 0%;;background-image:url(images/ics.png);"></a>
+						<a href="resources.html" class="nav_label">Resources</a>
+					</li>
+					
+					<!-- Legal Stuff button -->
+					<li>
+						<a href="legal-stuff.html" class="nav_ico" style="background-position:20% 0%; background-image:url(images/ics.png);"></a>
+						<a href="legal-stuff.html" class="nav_label">Legal&nbsp;Stuff</a>
+					</li>
+				</ul>
+			</nav>
+			<!-- END navigation bar -->
+			
+		</header>
+		
+		<!-- - - - - - - - - - - - - - - - - -
+			- PAGE CONTENT STARTS -
+		- - - - - - - - - - - - - - - - - - -->
+		
+		<!-- main outline in center of page-->
+		<section id="outline">
+			
+			<!-- BEGIN left side with contents -->
+			<article id='left_side'>
+				<!-- Main heading with description -->
+				<header id='h' style='padding:16px;background-color:#f2f2f2;height:116px'>
+					<h1 class='mainheading'>Learners Road Code</h1>
+					<hr>
+					<p class='grey' style='font-size:14px;padding-top:8px'>
+						An interactive game style road code quiz for young<br/>people learning to drive on New Zealand roads.
+					</p>
+				</header>
+				
+				<!-- Areas of road code covered -->
+				<section style='margin-top:32px;margin-bottom:32px;height:148px;'>
+					<div id='midleftlabels'>
+						<h3 class='subheading' style='margin-top:0;'><span class='_subheadBack'>Overtaking and Give Way</span></h3>
+						<h3 class='subheading'><span class='_subheadBack'>Road Markings</span></h3>
+						<h3 class='subheading' style='margin-bottom:0;'><span class='_subheadBack'>Signs and Parking</span></h3>
+					</div>
+					<div id='outerq' style='width:100%;height:148px;vertical-align:middle;'><p id='q' style=''></p></div>
+				</section>
+				
+				<!-- Label to get started -->
+				<div style='height:148px;'>
+					<div style='height:50%'></div>
+					<h1 id='botleftlabel' class='mainheading _botlabel1'>Choose a car to start</h1>
+				</div>
+			</article>
+			
+			<!-- END left side with contents -->
+			
+			<!-- BEGIN right side contents - invisable onload-->
+			<aside id='road_side' style='text-align:left;position:absolute;right:32px; width:240px;height:510px;'>
+				
+				<!-- Road -->
+				<div id='road_01' style='position:absolute;left:0px;margin-top:-57px;background-image:url(images/road-01.png);background-repeat:no-repeat;height:625px;width:125px;'>
+					
+					<!--Cars -->
+					<a id='blue_car' class='ie_blink' href='#' onclick="onStartTest('blue');"></a>
+					<a id='green_car' href='#' onclick="onStartTest('green');"></a>
+					<div id='explode' style='width:300px; height:300px; position:absolute;'></div>
+				</div>
+				
+				<!-- right side road extention element-->
+				<div style='height:148px;'><div id='road_02'></div></div>
+				
+				<!-- Answers -->
+				<section style='height:148px;margin-top:32px;margin-bottom:32px;'>
+					<div style='float:right;height:100%;'>
+						<div style='height:20px;'></div>
+						<ul style='list-style:none;'>
+							
+							<!-- Option one -->
+							<li>
+								<a id='pic_one' href='#' class='nav_ico' onclick='onOptionClick(1)' style='background-image:url(images/ics.png);'></a>
+								<div id='a_one' style='margin-top:-4px;'><span></span></div>
+							</li>
+							
+							<!-- Option two -->
+							<li>
+								<a id='pic_two' href='#' class='nav_ico' onclick='onOptionClick(2)' style='background-image:url(images/ics.png);'></a>
+								<div id='a_two' style='margin-top:-44px;'><span></span></div>
+							</li>
+							
+							<!-- Option three -->
+							<li>
+								<a id='pic_three' href='#' onclick='onOptionClick(3)' class='nav_ico' style='background-image:url(images/ics.png);'></a>
+								<div id='a_three' style='margin-top:-84px;'><span></span></div>
+								
+								<!-- Backing -->
+								<section style="z-index:-1;"><span id='prompt'></span></section>
+							</li>
+						</ul>
+					</div>
+				</section>
+				
+				<!-- Questions -->
+				<section style='height:148px;'>
+					<div style='float:right;height:100%;'>
+						<div style='height:20px;'></div>
+						<ul style='list-style:none;'>
+							
+							<!-- Question mark/next button -->
+							<li style='margin-top:48px'>
+								<a id='qmark' href='#' class='nav_ico' onclick='onOptionClick(0);' style='background-image:url(images/ics.png);'></a>
+								<div id='final' style='margin-top:-44px;'><p id='final-text'></p></div>
+								
+								<!-- Backing -->
+								<section style='margin-top:-44px;z-index:-1;'><span id='notSure'></span></section>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</aside>
+			<!-- END left side contents -->
+			
+		</section>
+
+		<!-- - - - - - - - - - - - - - - - - -
+			- ENDING ELEMENTS -
+		- - - - - - - - - - - - - - - - - - -->
+		
+		<!-- Copyright info in footer -->
+		<footer>
+			<h6>
+				&copy; 2013 Some Person, all rights reserved &#124;
+				<a href="legal-stuff.html">Legal Stuff</a> &#124;
+				<a href='http://www.google.com/chrome/'>Best in Chrome</a>&nbsp;&nbsp;
+			</h6>
+		</footer>
+	</body>
 </html>

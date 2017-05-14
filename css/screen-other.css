@@ -1,1 +1,20 @@
-@charset 'utf-8';#content{text-align:left;width:510px;position:absolute;right:32px}#expnd{height:262px}
+@charset 'utf-8';
+/**
+ * screen-other.css
+ * Screen only for legal and resources page
+ *
+ * Copyright 2013 Thomas Morrison, all right reserved.
+ */
+
+/** @Content defults */
+/*content styles that change when printing*/
+#content {
+	text-align:left;
+	width:510px;
+	position:absolute;
+	right:32px;
+}
+/*lock div at height to create scroll bar*/
+#expnd {
+	height:262px;
+}

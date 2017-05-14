@@ -1,1 +1,163 @@
-@charset 'utf-8';html,body,div,p,a,section,article,header,aside,h1,h2,h3,h4,h5,h6{user-select:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none}header h6{position:absolute;width:160px;height:20px;left:20px;top:30px;margin:0;font-weight:400;text-align:center;line-height:20px;background-color:#f2f2f2}nav ul{position:absolute;max-width:3em;right:20px;top:30px;margin:0;padding:0;background-color:#79db75}nav ul li{list-style:none;width:2em;height:2em;margin:.5em;padding:0}.nav_ico{float:left;width:100%;height:100%;background-color:transparent;background-repeat:no-repeat;opacity:.2;-ms-filter:"alpha(Opacity=15)";filter:alpha(opacity=15)}.nav_ico:hover{opacity:1;filter:'';-ms-filter:""}.nav_ico:hover~a{width:6.5em;left:-6.5em;animation:nav_exp_out .5s;-webkit-animation:nav_exp_out .5s;-moz-animation:nav_exp_out .5s;-ms-animation:nav_exp_out .5s;-o-animation:nav_exp_out .5s}.nav_label{position:absolute;height:2em;width:0;left:-2em;background-color:#f2f2f2;overflow:hidden;line-height:2em;color:#000;text-decoration:none;text-indent:.4em;cursor:default;animation:nav_exp_in 1s;-webkit-animation:nav_exp_in 1s;-moz-animation:nav_exp_in 1s;-ms-animation:nav_exp_in 1s;-o-animation:nav_exp_in 1s;pointer-events:none}@keyframes nav_exp_in{0%{width:6.5em;left:-6.5em}100%{width:0;left:0}}@keyframes nav_exp_out{0%{width:0;left:0}100%{width:6.5em;left:-6.5em}}@-webkit-keyframes nav_exp_in{0%{width:6.5em;left:-6.5em}100%{width:0;left:0}}@-webkit-keyframes nav_exp_out{0%{width:0;left:0}100%{width:6.5em;left:-6.5em}}@-moz-keyframes nav_exp_in{0%{width:6.5em;left:-6.5em}100%{width:0;left:0}}@-moz-keyframes nav_exp_out{0%{width:0;left:0}100%{width:6.5em;left:-6.5em}}@-ms-keyframes nav_exp_in{0%{width:6.5em;left:-6.5em}100%{width:0;left:0}}@-ms-keyframes nav_exp_out{0%{width:0;left:0}100%{width:6.5em;left:-6.5em}}@-o-keyframes nav_exp_in{0%{width:6.5em;left:-6.5em}100%{width:0;left:0}}@-o-keyframes nav_exp_out{0%{width:0;left:0}100%{width:6.5em;left:-6.5em}}#outline{position:fixed;width:776px;height:508px;margin:-286px 0 0 -420px;padding:32px;left:50%;top:50%;border:1px solid #f2f2f2;z-index:-1;box-shadow:0 0 50px rgba(242,242,242,.5);-webkit-box-shadow:0 0 50px rgba(242,242,242,.5);-moz-box-shadow:0 0 50px rgba(242,242,242,.5)}#green_car{position:absolute;background-position:100% 0;width:60px;height:110px;bottom:100px;right:0;z-index:2}#blue_car{position:absolute;background-position:0 0;width:60px;height:110px;top:100px;z-index:2}#outerq{display:table-cell}footer{position:fixed;text-align:right;color:grey;width:100%;bottom:5px}footer p{margin:.4em}footer a{text-decoration:none;color:grey}footer a:hover{color:#000}
+@charset 'utf-8';
+/**
+ * screen.css
+ * screen only css for all pages
+ *
+ * Copyright 2013 Thomas Morrison, all right reserved.
+ */
+
+/** @Disable cursor selection */
+html, body, div, p, a, section, article, header, aside, h1, h2, h3, h4, h5, h6{
+	user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+}
+
+/** @Heads */
+header h6 {
+	position:absolute;
+	width:160px;
+	height:20px;
+	left:20px;
+	top:30px;
+	margin:0;
+	font-weight:normal;
+	text-align:center;
+	line-height:20px;
+	background-color: #f2f2f2;
+}
+
+/** @Navigation */
+nav ul {
+	position:absolute;
+	max-width:3em;
+	right:20px;
+	top:30px;
+	margin:0;
+	padding:0;
+	background-color:#79db75;
+}
+nav ul li {
+	list-style:none;
+	width:2em;
+	height:2em;
+	margin:0.5em;
+	padding:0;
+}
+.nav_ico {
+	float:left;
+	width:100%;
+	height:100%;
+	background-color:transparent;
+	background-repeat:no-repeat;
+	opacity:0.2;
+	
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=15)";
+	filter:alpha(opacity=15);
+}
+.nav_ico:hover {
+	opacity:1;
+	
+	filter:'';
+	-ms-filter:"";
+}
+.nav_ico:hover ~ a {
+	width:6.5em;
+	left:-6.5em;
+	animation: nav_exp_out 0.5s;
+	-webkit-animation: nav_exp_out 0.5s;
+	-moz-animation: nav_exp_out 0.5s;
+	-ms-animation: nav_exp_out 0.5s;
+	-o-animation: nav_exp_out 0.5s;
+}
+.nav_label {
+	position:absolute;
+	height:2em;
+	width:0em;
+	left:-2em;
+	background-color:rgb(242, 242, 242);
+	overflow:hidden;
+	line-height:2em;
+	color:black;
+	text-decoration:none;
+	text-indent:0.4em;
+	cursor:default;
+	animation: nav_exp_in 1s;
+	-webkit-animation: nav_exp_in 1s;
+	-moz-animation: nav_exp_in 1s;
+	-ms-animation: nav_exp_in 1s;
+	-o-animation: nav_exp_in 1s;
+	pointer-events:none;
+}
+
+/** @Animations */
+@keyframes nav_exp_in {0% {width:6.5em;left:-6.5em;}100% {width:0em;left:0em;}}
+@keyframes nav_exp_out {0% {width:0em;left:0em;}100% {width:6.5em;left:-6.5em;}}
+@-webkit-keyframes nav_exp_in {0% {width:6.5em;left:-6.5em;}100% {width:0em;left:0em;}}
+@-webkit-keyframes nav_exp_out {0% {width:0em;left:0em;}100% {width:6.5em;left:-6.5em;}}
+@-moz-keyframes nav_exp_in {0% {width:6.5em;left:-6.5em;}100% {width:0em;left:0em;}}
+@-moz-keyframes nav_exp_out {0% {width:0em;left:0em;}100% {width:6.5em;left:-6.5em;}}
+@-ms-keyframes nav_exp_in {0% {width:6.5em;left:-6.5em;}100% {width:0em;left:0em;}}
+@-ms-keyframes nav_exp_out {0% {width:0em;left:0em;}100% {width:6.5em;left:-6.5em;}}
+@-o-keyframes nav_exp_in {0% {width:6.5em;left:-6.5em;}100% {width:0em;left:0em;}}
+@-o-keyframes nav_exp_out {0% {width:0em;left:0em;}100% {width:6.5em;left:-6.5em;}}
+
+/** @Outline*/
+#outline {
+	position:fixed;
+	width:776px;
+	height:508px;
+	margin:-286px 0 0 -420px;
+	padding:32px;
+	left:50%;
+	top:50%;
+	border:1px solid rgb(242, 242, 242);
+	z-index:-1;
+	box-shadow:0 0 50px rgba(242, 242, 242, 0.5);
+	-webkit-box-shadow:0 0 50px rgba(242, 242, 242, 0.5);
+	-moz-box-shadow:0 0 50px rgba(242, 242, 242, 0.5);
+}
+
+/** @Cars */
+#green_car {
+	position:absolute;
+	background-position:100% 0%;
+	width:60px;
+	height:110px;
+	bottom:100px;
+	right:0;
+	z-index:2;
+}
+#blue_car {
+	position:absolute;
+	background-position:0% 0%;
+	width:60px;
+	height:110px;
+	top:100px;
+	z-index:2;
+}
+#outerq {
+	display:table-cell;
+}
+
+/** @Footer */
+footer {
+	position:fixed;
+	text-align:right;
+	color:grey;
+	width:100%;
+	bottom:5px;
+}
+footer p {
+	margin:0.4em;
+}
+footer a {
+	text-decoration:none;
+	color:grey;
+}
+footer a:hover {
+	color:black;
+}
